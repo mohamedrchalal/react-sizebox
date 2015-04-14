@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>react-sizebox Demo</title>
+  <style>
+	.react-sizebox {
+		height: 100%;
+		width: 100%;
+	}
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react-with-addons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+  <script src="react-sizebox.js"></script>
+  <script type="text/jsx">
+
+  	var DimensionDisplay = React.createClass({
+	  render: function() {
+	    return ( 
+	    	<div className="dimension-display">
+	    		<div className="dimension-display-height">Child Height: {this.props.height}</div>
+	    		<div className="dimension-display-width">Child Width: {this.props.width}</div>
+	    	</div>
+	    );
+	  }
+	});
+
+    /* jshint undef:false */
+    React.render(
+    	<ReactSizebox className="react-sizebox" widthProp="width" heightProp="height">
+      		<DimensionDisplay />
+      	</ReactSizebox>
+    	, document.getElementById('main'));
+  </script>
+</body>
+</html>
