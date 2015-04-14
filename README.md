@@ -4,6 +4,8 @@ A simple div that pushes it's dimensions down to child React components.
 
 Useful if you want to dynamically size things via CSS but your React components must be sized via props.
 
+Listens to window resize event to refresh size states.
+
 ## Development
 
 * Development server `npm run dev`.
