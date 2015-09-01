@@ -2,7 +2,7 @@ var React = require("react/addons");
 
 require("./react-sizebox.scss");
 
-module.exports = React.createClass({
+var Sizebox = React.createClass({
 
   componentDidMount: function() {
     this._updateSize();
@@ -24,10 +24,16 @@ module.exports = React.createClass({
   	dimensionProps[this.props.heightProp] = this.state.height;
 
   	var alteredChildren = React.Children.map(this.props.children, function(child){
-  	  return React.addons.cloneWithProps(child, dimensionProps);
+  	  return React.cloneElement(child, dimensionProps);
    	});
 
-    return <div className={this.props.className || "react-sizebox"} style={this.props.style}>{alteredChildren}</div>;
+    return (
+      <div 
+        className={this.props.className || "react-sizebox"}
+        style={this.props.style}>
+        {alteredChildren}
+      </div>
+    );
   },
   _onResize: function() {
     clearTimeout(this._updateTimer);
@@ -42,3 +48,5 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = Sizebox;

@@ -1,6 +1,6 @@
 var React = require("react/addons");
 
-module.exports = React.createClass({
+var DimensionDisplay = React.createClass({
   render: function() {
     return ( 
     	<div className="dimension-display">
@@ -10,3 +10,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+module.exports = DimensionDisplay;
