@@ -28,11 +28,11 @@ var Sizebox = React.createClass({
    	});
 
     return (
-      <div 
+      <td 
         className={this.props.className || "react-sizebox"}
         style={this.props.style}>
         {alteredChildren}
-      </div>
+      </td>
     );
   },
   _onResize: function() {
