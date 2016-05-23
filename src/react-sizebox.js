@@ -1,6 +1,7 @@
-var React = require("react/addons");
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-require("./react-sizebox.scss");
+require('./react-sizebox.scss');
 
 var Sizebox = React.createClass({
 
@@ -28,8 +29,8 @@ var Sizebox = React.createClass({
    	});
 
     return (
-      <div 
-        className={this.props.className || "react-sizebox"}
+      <div
+        className={this.props.className || 'react-sizebox'}
         style={this.props.style}>
         {alteredChildren}
       </div>
@@ -40,7 +41,7 @@ var Sizebox = React.createClass({
     this._updateTimer = setTimeout(this._updateSize, 16);
   },
   _updateSize: function() {
-    var domNode = this.getDOMNode();
+    var domNode = ReactDOM.findDOMNode(this);
     this.setState({
       width: domNode.clientWidth,
       height: domNode.clientHeight

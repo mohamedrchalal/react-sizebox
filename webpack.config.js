@@ -1,34 +1,50 @@
-/* jshint node: true */
+var webpack = require('webpack');
 var path = require('path');
 
-
 module.exports = {
-  context: path.join(__dirname),
-  entry: './lib/index.js',
-
-  output: {
-    path: path.join(__dirname),
-    filename: 'react-sizebox.js',
-    libraryTarget: 'umd',
-    library: 'ReactSizebox'
-  },
-  devtool: 'inline-source-map',
-  externals: {
-   'react/addons': 'var React'
-  },
-
   module: {
     loaders: [
       {
-        test: /\.scss$/,
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {presets:['react']},
+      },
+      {
+        test: /\.s?css$/,
         // Query parameters are passed to node-sass
         loader: 'style!css!sass?outputStyle=expanded&' +
           'includePaths[]=' + (path.resolve(__dirname, './node_modules'))
       },
-      {
-        test: /\.jsx$/,
-        loader: 'jsx-loader?harmony'
-      }
-    ]
-  }
+    ],
+  },
+
+  entry: './src/react-sizebox.js',
+
+  output: {
+    library: 'ReactSizebox',
+    libraryTarget: 'umd',
+    path: 'dist',
+    filename: 'react-sizebox.js',
+  },
+
+  externals: {
+    react: {
+      root: 'React',
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+    },
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'react-dom',
+    },
+  },
+
+  node: {
+    Buffer: false
+  },
+
 };
