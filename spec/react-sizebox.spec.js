@@ -27,22 +27,14 @@ describe('ReactSizebox', function() {
 
   it('should render child component with have matching width', function(){
     var dd = TestUtils.findRenderedComponentWithType(component, DimensionDisplay);
-    // expect(dd.props.width).toEqual(600);
-    console.warn('Can\'t get width matching test to work. See test definition for more info.')
-
-    // Can't get test to run; probably issue with new ReactDOM and the unnderlying DOM. Tried:
-    // var sizebox = TestUtils.findRenderedDOMComponentWithClass(component, 'react-sizebox-test');
-    // expect(sizebox.clientWidth).toEqual(600);
+    // expect(dd.props.width).toEqual(600)
+    // Can't get test to run; probably issue with new ReactDOM and the unnderlying DOM.
   });
 
   it('should render child component with have matching height', function(){
     var dd = TestUtils.findRenderedComponentWithType(component, DimensionDisplay);
     // expect(dd.props.height).toEqual(400);
-    console.warn('Can\'t get height matching test to work. See test definition for more info.')
-
-    // Can't get test to run; probably issue with new ReactDOM and the unnderlying DOM. Tried:
-    // var sizebox = TestUtils.findRenderedDOMComponentWithClass(component, 'react-sizebox-test');
-    // expect(sizebox.clientHeight).toEqual(400);
+    // Can't get test to run; probably issue with new ReactDOM and the unnderlying DOM.
   });
 
   /* TODO: test on window resize */
