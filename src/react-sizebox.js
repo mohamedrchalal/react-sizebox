@@ -16,6 +16,16 @@ var Sizebox = React.createClass({
         win.onresize = this._onResize;
       }
   },
+  componentWillUnmount: function() {
+    var win = window;
+    if (win.removeEventListener) {
+        win.removeEventListener('resize', this._onResize, false);
+      } else if (win.detachEvent) {
+        win.detachEvent('onresize', this._onResize);
+      } else {
+        win.onresize = undefined;
+      }
+  },
   getInitialState: function() {
     return {width: 0, height: 0};
   },
