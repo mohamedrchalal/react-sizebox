@@ -48,7 +48,7 @@ var Sizebox = React.createClass({
   },
   _onResize: function() {
     clearTimeout(this._updateTimer);
-    this._updateTimer = setTimeout(this._updateSize, 16);
+    this._updateTimer = setTimeout(this._updateSize, this.props.resizeDebounceTime);
   },
   _updateSize: function() {
     var domNode = ReactDOM.findDOMNode(this);
@@ -59,5 +59,19 @@ var Sizebox = React.createClass({
   }
 
 });
+
+Sizebox.propTypes = {
+  className: React.PropTypes.string,
+  style: React.PropTypes.object,
+  widthProp: React.PropTypes.string,
+  heightProp: React.PropTypes.string,
+  resizeDebounceTime: React.PropTypes.number
+}
+
+Sizebox.defaultProps = {
+  widthProp: 'width',
+  heightProp: 'height',
+  resizeDebounceTime: 100
+}
 
 module.exports = Sizebox;

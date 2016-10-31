@@ -15,7 +15,7 @@ var DimensionDisplay = React.createClass({
 
 /* jshint undef:false */
 ReactDOM.render(
-	<ReactSizebox className="react-sizebox" widthProp="width" heightProp="height">
+	<ReactSizebox className="react-sizebox" widthProp="width" heightProp="height" resizeDebounceTime={100}>
   		<DimensionDisplay />
   	</ReactSizebox>
 	, document.getElementById('main'));
