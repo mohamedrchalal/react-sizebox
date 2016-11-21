@@ -34,15 +34,18 @@ var Sizebox = React.createClass({
   	dimensionProps[this.props.widthProp] = this.state.width;
   	dimensionProps[this.props.heightProp] = this.state.height;
 
-  	var alteredChildren = React.Children.map(this.props.children, function(child){
-  	  return React.cloneElement(child, dimensionProps);
-   	});
+  	var children = ''
+    if(this.state.width !== 0 && this.state.height !== 0) {
+      children =  React.Children.map(this.props.children, function(child){
+        return React.cloneElement(child, dimensionProps);
+      });
+    }
 
     return (
       <div
         className={this.props.className || 'react-sizebox'}
         style={this.props.style}>
-        {alteredChildren}
+        {children}
       </div>
     );
   },
