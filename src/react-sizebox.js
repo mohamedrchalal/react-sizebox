@@ -40,12 +40,18 @@ var Sizebox = React.createClass({
         return React.cloneElement(child, dimensionProps);
       });
     }
-
+    var fillerImage = ''
+    if(this.props.fillerImage) {
+      fillerImage = (
+        <img src={this.props.fillerImage} />
+      )
+    }
     return (
       <div
         className={this.props.className || 'react-sizebox'}
         style={this.props.style}>
         {children}
+        {fillerImage}
       </div>
     );
   },
