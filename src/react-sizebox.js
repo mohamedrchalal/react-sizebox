@@ -1,9 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
 
 require('./react-sizebox.scss');
 
-var Sizebox = React.createClass({
+var Sizebox = createReactClass({
 
   componentDidMount: function() {
     this._updateSize();
