@@ -1,6 +1,6 @@
 var React = require('react');
 var DimensionDisplay = require('./dimension-display');
-var TestUtils = require('react-addons-test-utils');
+var TestUtils = require('react-dom/test-utils');
 var ReactSizebox = require('../dist/react-sizebox');
 
 

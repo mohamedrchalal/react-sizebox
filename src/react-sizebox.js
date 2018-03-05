@@ -1,3 +1,4 @@
+var PropTypes = require('prop-types');
 var React = require('react');
 var ReactDOM = require('react-dom');
 
@@ -70,11 +71,11 @@ var Sizebox = React.createClass({
 });
 
 Sizebox.propTypes = {
-  className: React.PropTypes.string,
-  style: React.PropTypes.object,
-  widthProp: React.PropTypes.string,
-  heightProp: React.PropTypes.string,
-  resizeDebounceTime: React.PropTypes.number
+  className: PropTypes.string,
+  style: PropTypes.object,
+  widthProp: PropTypes.string,
+  heightProp: PropTypes.string,
+  resizeDebounceTime: PropTypes.number
 }
 
 Sizebox.defaultProps = {
