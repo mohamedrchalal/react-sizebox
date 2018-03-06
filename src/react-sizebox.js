@@ -1,10 +1,11 @@
 var PropTypes = require('prop-types');
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactDOM = require('react-dom');
 
 require('./react-sizebox.scss');
 
-var Sizebox = React.createClass({
+var Sizebox = createReactClass({
 
   componentDidMount: function() {
     this._updateSize();

@@ -23,12 +23,11 @@ module.exports = function(config) {
       // see: https://github.com/ariya/phantomjs/issues/10522
       'node_modules/es5-shim/es5-shim.js',
       //Poly fill so we can use es6 maps etc from react
-+      'node_modules/babel-polyfill/dist/polyfill.js',
+      'node_modules/babel-polyfill/dist/polyfill.js',
 
       // React is an external dependency of the component
-      'node_modules/react/index.js',
-      'node_modules/react-dom/index.js',
-
+      // 'node_modules/react/index.js',
+      // 'node_modules/react-dom/index.js',
       'spec/spec-helper.js',
       'spec/**/*.spec.*',
       { pattern: 'lib/**/*', watched: true, included: false }
