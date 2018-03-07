@@ -1,8 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createReactClass = require('create-react-class');
 var ReactSizebox = require('./src/react-sizebox')
 
-var DimensionDisplay = React.createClass({
+var DimensionDisplay = createReactClass({
   render: function() {
     return (
     	<div className="dimension-display">

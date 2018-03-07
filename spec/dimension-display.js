@@ -1,6 +1,7 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 
-var DimensionDisplay = React.createClass({
+var DimensionDisplay = createReactClass({
   render: function() {
     return (
     	<div className='dimension-display'>
